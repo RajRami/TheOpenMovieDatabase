@@ -16,23 +16,25 @@ public class SearchViewController implements Initializable {
 
     @FXML
     private Label headingLabel;
-
     @FXML
     private ImageView imageView;
-
     @FXML
     private ListView<Movie> resultView;
-
+    @FXML
+    private Label numberOfMovies;
     @FXML
     private Button searchButton;
-
+    @FXML
+    private Button getDetails;
     @FXML
     private TextField searchTextField;
 
     @FXML
     private void searchMovies(){
         APIResponse apiResponse = APIUtility.getMoviesFromOMDBAPI(searchTextField.getText());
+        resultView.getItems().clear();
         resultView.getItems().addAll(apiResponse.getSearch());
+        numberOfMovies.setText("Number of Movies: " + resultView.getItems().size());
     }
 
 
@@ -42,7 +44,9 @@ public class SearchViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        getDetails.setVisible(false);
         resultView.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldMovieSelected, newMovieSelected) -> {
+            getDetails.setVisible(true);
             try {
                 imageView.setImage(new Image(newMovieSelected.getPoster()));
             }
@@ -50,5 +54,13 @@ public class SearchViewController implements Initializable {
                 imageView.setImage(new Image("https://trailerfailure.com/img/images/missingCoverPhoto.jpg"));
             }
         }));
+    }
+
+    /**
+     * This method will pass an imdbID to the DetailsView controller
+     */
+    @FXML
+    private void getDetails(){
+     String imdbID = resultView.getSelectionModel().getSelectedItem().getImdbID();
     }
 }

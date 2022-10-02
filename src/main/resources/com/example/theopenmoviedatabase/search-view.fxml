@@ -27,13 +27,13 @@
                            </children>
                         </HBox>
                         <ListView fx:id="resultView" prefHeight="235.0" prefWidth="405.0" />
-                        <Label text="Label" />
+                        <Label fx:id="numberOfMovies" text="Msg label" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER">
                      <children>
                         <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button mnemonicParsing="false" text="Get Details" />
+                        <Button fx:id="getDetails" mnemonicParsing="false" onAction="#getDetails" text="Get Details" />
                      </children>
                   </VBox>
                </children>
