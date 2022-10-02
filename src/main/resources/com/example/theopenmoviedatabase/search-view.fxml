@@ -11,25 +11,31 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.theopenmoviedatabase.SearchViewController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.theopenmoviedatabase.SearchViewController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="headingLabel" text="Search A Movie From Our Database " textFill="WHITE" />
+            <Label fx:id="headingLabel" text="Search A Movie From Our Database " />
             <HBox prefHeight="281.0" prefWidth="560.0" spacing="20.0">
                <children>
                   <VBox spacing="20.0">
                      <children>
-                        <HBox spacing="20.0">
+                        <HBox spacing="13.0">
                            <children>
-                              <TextField fx:id="searchTextField" prefHeight="25.0" prefWidth="218.0" promptText="Enter Movie Name" />
-                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchMovies" prefHeight="25.0" prefWidth="70.0" text="Search" />
+                              <TextField fx:id="searchTextField" prefHeight="36.0" prefWidth="273.0" promptText="Enter Movie Name" />
+                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchMovies" prefHeight="36.0" prefWidth="88.0" text="Search" />
                            </children>
                         </HBox>
-                        <ListView fx:id="resultView" prefHeight="255.0" prefWidth="201.0" />
+                        <ListView fx:id="resultView" prefHeight="235.0" prefWidth="405.0" />
+                        <Label text="Label" />
                      </children>
                   </VBox>
-                  <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox alignment="CENTER">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button mnemonicParsing="false" text="Get Details" />
+                     </children>
+                  </VBox>
                </children>
             </HBox>
          </children>
