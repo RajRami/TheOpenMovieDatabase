@@ -1,5 +1,6 @@
 package com.example.theopenmoviedatabase;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -60,7 +62,9 @@ public class SearchViewController implements Initializable {
      * This method will pass an imdbID to the DetailsView controller
      */
     @FXML
-    private void getDetails(){
-     String imdbID = resultView.getSelectionModel().getSelectedItem().getImdbID();
+    private void getDetails(ActionEvent event) throws IOException {
+        String imdbID = resultView.getSelectionModel().getSelectedItem().getImdbID();
+        System.out.println("Movie ID: "+imdbID);
+        SceneChanger.changeScenes(event, "details-view.fxml",imdbID);
     }
 }

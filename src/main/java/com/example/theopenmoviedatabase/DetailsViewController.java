@@ -34,4 +34,11 @@ public class DetailsViewController {
     @FXML
     private Label writers;
 
+    /**
+     * This method will load a movieID
+     */
+    public void loadMovieDetails(String imdbID)
+    {
+        System.out.println("The movie ID pass into the controller is: "+imdbID);
+    }
 }
