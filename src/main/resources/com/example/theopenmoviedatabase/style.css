@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Baloo+Bhai+2&family=Baloo+Bhaijaan+2:wght@500&display=swap');
+
+.root{
+    -fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    -fx-font-family: 'Baloo 2', cursive;
+    -fx-font-size: 16px;
+}
+#headingLabel{
+    -fx-font-size: 23px;
+}
+#searchButton{
+    -fx-background-radius: 13px;
+    -fx-cursor: hand;
+}

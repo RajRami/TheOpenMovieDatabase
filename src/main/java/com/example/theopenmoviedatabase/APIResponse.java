@@ -1,4 +1,4 @@
-package com.example.theopenmoviedatabse;
+package com.example.theopenmoviedatabase;
 
 import com.google.gson.annotations.SerializedName;
 

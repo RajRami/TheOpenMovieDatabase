@@ -68,7 +68,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.theopenmoviedatabse/com.example.theopenmoviedatabse.Main
+                                com.example.theopenmoviedatabse/com.example.theopenmoviedatabase.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

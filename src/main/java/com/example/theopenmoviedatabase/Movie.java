@@ -1,4 +1,4 @@
-package com.example.theopenmoviedatabse;
+package com.example.theopenmoviedatabase;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -37,5 +37,13 @@ public class Movie {
 
     public String getPoster() {
         return poster;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String toString() {
+        return String.format("%s (%s)", title, year);
     }
 }

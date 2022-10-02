@@ -4,6 +4,6 @@ module com.example.theopenmoviedatabse {
     requires com.google.gson;
     requires java.net.http;
 
-    opens com.example.theopenmoviedatabse to javafx.fxml, com.google.gson;
-    exports com.example.theopenmoviedatabse;
+    opens com.example.theopenmoviedatabase to javafx.fxml, com.google.gson;
+    exports com.example.theopenmoviedatabase;
 }
