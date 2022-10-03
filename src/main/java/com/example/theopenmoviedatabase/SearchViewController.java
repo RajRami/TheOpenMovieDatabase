@@ -64,7 +64,6 @@ public class SearchViewController implements Initializable {
     @FXML
     private void getDetails(ActionEvent event) throws IOException {
         String imdbID = resultView.getSelectionModel().getSelectedItem().getImdbID();
-        System.out.println("Movie ID: "+imdbID);
         SceneChanger.changeScenes(event, "details-view.fxml",imdbID);
     }
 }

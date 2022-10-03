@@ -17,4 +17,12 @@ public class Rating {
     public String getValue() {
         return value;
     }
+
+    /**
+     * @return
+     */
+    @Override
+    public String toString() {
+        return String.format("%s - %s", source, value);
+    }
 }

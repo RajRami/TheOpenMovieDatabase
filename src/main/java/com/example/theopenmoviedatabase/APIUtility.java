@@ -93,4 +93,31 @@ public class APIUtility {
         return null;
     }
 
+    /**
+     * Thus method will return a MovieDetails object for one particular movie based on imdbID
+     */
+    public static MovieDetails getMovieDetailsFromOMDB(String imdbID){
+
+        String APIKey = "5a933b07";
+        String uri = "http://www.omdbapi.com/?apikey=" + APIKey + "&i=" + imdbID;
+
+        //Creating an HttpClient object
+        HttpClient httpClient = HttpClient.newHttpClient();
+
+        //Creating an HttpRequest object
+        HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        try{
+            //This will call the API and write the result to the file called "javaFetchedApi"
+            HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+
+            Gson gson = new Gson();
+            return gson.fromJson(httpResponse.body(), MovieDetails.class);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
