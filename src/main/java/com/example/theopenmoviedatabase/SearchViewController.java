@@ -35,8 +35,13 @@ public class SearchViewController implements Initializable {
     private void searchMovies(){
         APIResponse apiResponse = APIUtility.getMoviesFromOMDBAPI(searchTextField.getText());
         resultView.getItems().clear();
-        resultView.getItems().addAll(apiResponse.getSearch());
-        numberOfMovies.setText("Number of Movies: " + resultView.getItems().size());
+        if(apiResponse.getSearch() != null){
+            resultView.getItems().addAll(apiResponse.getSearch());
+            numberOfMovies.setText("Number of Movies: " + resultView.getItems().size());
+        }
+        else {
+            numberOfMovies.setText("Movie Not Found..!");
+        }
     }
 
 
@@ -47,6 +52,7 @@ public class SearchViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getDetails.setVisible(false);
+        numberOfMovies.setText("");
         resultView.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldMovieSelected, newMovieSelected) -> {
             getDetails.setVisible(true);
             try {

@@ -8,8 +8,11 @@
 .label{
     -fx-text-fill: white;
 }
-#headingLabel{
-    -fx-font-size: 25px;
+.list-view{
+    -fx-cursor: hand;
+}
+#headingLabel, #movieTitle{
+    -fx-font-size: 30px;
 }
 .button{
     -fx-background-radius: 18px;

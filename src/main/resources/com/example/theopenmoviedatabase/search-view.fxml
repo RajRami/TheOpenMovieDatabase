@@ -10,12 +10,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.theopenmoviedatabase.SearchViewController">
    <children>
       <VBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="headingLabel" text="Search A Movie From Our Database " />
+            <Label fx:id="headingLabel" text="Search A Movie From Our Database ">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin></Label>
             <HBox prefHeight="281.0" prefWidth="560.0" spacing="20.0">
                <children>
                   <VBox spacing="20.0">
@@ -27,12 +29,15 @@
                            </children>
                         </HBox>
                         <ListView fx:id="resultView" prefHeight="235.0" prefWidth="405.0" />
-                        <Label fx:id="numberOfMovies" text="Msg label" />
+                        <Label fx:id="numberOfMovies" text="Label" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER">
+                  <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></ImageView>
                         <Button fx:id="getDetails" mnemonicParsing="false" onAction="#getDetails" text="Get Details" />
                      </children>
                   </VBox>
